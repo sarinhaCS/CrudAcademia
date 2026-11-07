@@ -8,6 +8,6 @@ package dao;
  *
  * @author maria.gomes.s
  */
-public class InstrutorDAO {
+public class InstrutorDAO extends ConexaoMySQL{
     
 }

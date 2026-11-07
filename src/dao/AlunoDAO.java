@@ -8,6 +8,6 @@ package dao;
  *
  * @author maria.gomes.s
  */
-public class AlunoDAO {
+public class AlunoDAO extends ConexaoMySQL{
     
 }
