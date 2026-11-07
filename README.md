@@ -25,7 +25,6 @@ A rotina principal do sistema é a **matrícula**: ela relaciona um aluno a um p
 - [ ] Relatório de matrículas
 - [ ] Menu principal
 
-> Marque as caixas conforme cada item for concluído.
 
 ## Estrutura do projeto
 
