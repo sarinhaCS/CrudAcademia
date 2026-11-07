@@ -4,10 +4,18 @@
  */
 package dao;
 
-/**
- *
- * @author maria.gomes.s
- */
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+/** Fábrica de conexões JDBC com o MySQL. */
 public class ConexaoMySQL {
-    
+    private static final String URL =
+        "jdbc:mysql://localhost:3306/bd_academia?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Sao_Paulo";
+    private static final String USUARIO = "root";
+    private static final String SENHA = "SUA_SENHA_AQUI";   // <-- altere aqui
+
+    public static Connection getConexao() throws SQLException {
+        return DriverManager.getConnection(URL, USUARIO, SENHA);
+    }
 }
