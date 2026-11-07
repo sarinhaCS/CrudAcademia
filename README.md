@@ -104,7 +104,7 @@ Abra `src/dao/ConexaoMySQL.java` e ajuste, **apenas no seu computador**:
 
 ## Equipe
 
-Sarah Cruz Serpa
-Maria Eduarda Gomes da Silva
-Victor Gabriel Andrade
-Vitor Lustosa Leão Pinheiro
+Sarah Cruz Serpa |
+Maria Eduarda Gomes da Silva |
+Victor Gabriel Andrade |
+Vitor Lustosa Leão Pinheiro |
