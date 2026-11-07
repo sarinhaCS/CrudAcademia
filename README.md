@@ -16,15 +16,14 @@ A rotina principal do sistema é a **matrícula**: ela relaciona um aluno a um p
 
 ## Funcionalidades
 
-- [x] CRUD de **Aluno**
-- [x] CRUD de **Instrutor**
-- [x] CRUD de **Plano**
-- [ ] CRUD de **Modalidade**
-- [ ] CRUD de **Matrícula** (CRUD principal)
-- [ ] Consulta com `JOIN` (matrícula + aluno + plano + modalidade + instrutor)
-- [ ] Relatório de matrículas
-- [ ] Menu principal
-
+- CRUD de **Aluno**
+- CRUD de **Instrutor**
+- CRUD de **Plano**
+- CRUD de **Modalidade**
+- CRUD de **Matrícula** (CRUD principal)
+- Consulta com `JOIN` (matrícula + aluno + plano + modalidade + instrutor)
+- Relatório de matrículas
+- Menu principal
 
 ## Estrutura do projeto
 
@@ -56,17 +55,7 @@ View (tela)  →  Controller (valida)  →  DAO (SQL/JDBC)  →  MySQL
 
 ## Banco de dados
 
-O banco se chama `bd_academia` e tem 5 tabelas:
-
-### Modelo lógico
-
-![Modelo lógico do banco bd_academia](docs/modelo_logico.png)
-
-- O instrutor da matrícula é **opcional** (por isso as consultas usam `LEFT JOIN`).
-- O status da matrícula aceita apenas `Ativa`, `Trancada` ou `Cancelada`.
-- Não é possível excluir aluno, instrutor ou plano que estejam vinculados a matrículas (chave estrangeira).
-
-Os dados de teste têm 20 alunos, 8 instrutores, 5 modalidades, 4 planos e 24 matrículas.
+O banco se chama `bd_academia` e tem 5 tabelas: **Aluno**, **Instrutor**, **Plano**, **Modalidade** e **Matrícula**.
 
 ## Como executar
 
@@ -115,8 +104,7 @@ Abra `src/dao/ConexaoMySQL.java` e ajuste, **apenas no seu computador**:
 
 ## Equipe
 
-| Integrante | Responsabilidade |
-|---|---|
-| _Nome_ | CRUDs de Aluno, Instrutor e Plano |
-| _Nome_ | _a preencher_ |
-| _Nome_ | _a preencher_ |
+Sarah Cruz Serpa
+Maria Eduarda Gomes da Silva
+Victor Gabriel Andrade
+Vitor Lustosa Leão Pinheiro
