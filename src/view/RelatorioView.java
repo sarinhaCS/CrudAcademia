@@ -65,7 +65,7 @@ public class RelatorioView extends javax.swing.JFrame {
     // resumo de faturamento
     private JLabel lblFaturamento;
     private JLabel lblReceitaMensal;
-    private JLabel lblTicketMedio;
+    //private JLabel lblTicketMedio;
     private JLabel lblAtivas;
     private JLabel lblTrancadas;
     private JLabel lblCanceladas;
@@ -120,16 +120,12 @@ public class RelatorioView extends javax.swing.JFrame {
 
         // linha de "cards" com os totais
         lblFaturamento = new JLabel("-");
-        lblReceitaMensal = new JLabel("-");
-        lblTicketMedio = new JLabel("-");
         lblAtivas = new JLabel("-");
         lblTrancadas = new JLabel("-");
         lblCanceladas = new JLabel("-");
 
         JPanel cards = new JPanel(new GridLayout(1, 6, 6, 0));
         cards.add(criarCard("Faturamento (ativas)", lblFaturamento, new Color(0, 110, 40)));
-        cards.add(criarCard("Receita mensal estimada", lblReceitaMensal, new Color(0, 110, 40)));
-        cards.add(criarCard("Ticket médio", lblTicketMedio, Color.DARK_GRAY));
         cards.add(criarCard("Ativas", lblAtivas, Color.DARK_GRAY));
         cards.add(criarCard("Trancadas", lblTrancadas, new Color(190, 120, 0)));
         cards.add(criarCard("Canceladas", lblCanceladas, new Color(170, 0, 0)));
@@ -161,7 +157,8 @@ public class RelatorioView extends javax.swing.JFrame {
 
     private DefaultTableModel novoModeloResumo(String primeiraColuna) {
         return new DefaultTableModel(new String[]{primeiraColuna, "Matrículas ativas", "Faturamento"}, 0) {
-            @Override public boolean isCellEditable(int r, int c) { return false; }
+            @Override 
+            public boolean isCellEditable(int r, int c) { return false; }
         };
     }
 
@@ -211,8 +208,6 @@ public class RelatorioView extends javax.swing.JFrame {
     // Recebe o resumo já calculado e preenche os cards e as tabelinhas de faturamento.
     public void exibirResumo(ResumoFaturamento r) {
         lblFaturamento.setText(moeda(r.getFaturamento()));
-        lblReceitaMensal.setText(moeda(r.getReceitaMensal()));
-        lblTicketMedio.setText(moeda(r.getTicketMedio()));
         lblAtivas.setText(String.valueOf(r.getQtdAtivas()));
         lblTrancadas.setText(r.getQtdTrancadas() + " (" + moeda(r.getValorTrancadas()) + ")");
         lblCanceladas.setText(r.getQtdCanceladas() + " (" + moeda(r.getValorCanceladas()) + ")");
@@ -263,6 +258,7 @@ public class RelatorioView extends javax.swing.JFrame {
                 false, false, false, false, false, false, false
             };
 
+            @Override
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
