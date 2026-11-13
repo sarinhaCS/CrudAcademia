@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package model;
+import java.math.BigDecimal;
 import java.time.LocalDate;
 /**
  *
@@ -23,6 +24,8 @@ private String nomeAluno;
     private String nomePlano;
     private String nomeModalidade;
     private String nomeInstrutor;
+    private BigDecimal valorPlano;   // valor do plano (vem do JOIN com plano)
+    private int duracaoMeses;        // duração do plano em meses (vem do JOIN com plano)
 
     public Matricula() {}
 
@@ -58,4 +61,10 @@ private String nomeAluno;
 
     public String getNomeInstrutor() { return nomeInstrutor; }
     public void setNomeInstrutor(String nomeInstrutor) { this.nomeInstrutor = nomeInstrutor; }
+
+    public BigDecimal getValorPlano() { return valorPlano; }
+    public void setValorPlano(BigDecimal valorPlano) { this.valorPlano = valorPlano; }
+
+    public int getDuracaoMeses() { return duracaoMeses; }
+    public void setDuracaoMeses(int duracaoMeses) { this.duracaoMeses = duracaoMeses; }
 }

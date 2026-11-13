@@ -4,6 +4,15 @@
  */
 package view;
 
+import controller.AlunoController;
+import controller.InstrutorController;
+import controller.PlanoController;
+import controller.RelatorioController;
+import dao.AlunoDAO;
+import dao.InstrutorDAO;
+import dao.MatriculaDAO;
+import dao.PlanoDAO;
+
 /**
  *
  * @author Victor Gabriel
@@ -126,8 +135,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void jBplanoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBplanoActionPerformed
         // TODO add your handling code here:
-        PlanoView da =  new PlanoView();
-        da.show();
+        PlanoView da = new PlanoView();
+        new PlanoController(da, new PlanoDAO());   // liga a tela ao controller
+        da.setVisible(true);
     }//GEN-LAST:event_jBplanoActionPerformed
 
     private void jBmodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBmodActionPerformed
@@ -138,14 +148,16 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void jBtutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtutorActionPerformed
         // TODO add your handling code here:
-        InstrutorView da =  new InstrutorView();
-        da.show();
+        InstrutorView da = new InstrutorView();
+        new InstrutorController(da, new InstrutorDAO());
+        da.setVisible(true);
     }//GEN-LAST:event_jBtutorActionPerformed
 
     private void jBrelatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBrelatorioActionPerformed
         // TODO add your handling code here:
-                 RelatorioView da =  new RelatorioView();
-        da.show();
+        RelatorioView da = new RelatorioView();
+        new RelatorioController(da, new MatriculaDAO());   // sem isto a tabela ficava vazia
+        da.setVisible(true);
     }//GEN-LAST:event_jBrelatorioActionPerformed
 
     private void jBmatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBmatActionPerformed
@@ -156,8 +168,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void jBalunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBalunoActionPerformed
         // TODO add your handling code here:
-         AlunoView da =  new AlunoView();
-        da.show();
+        AlunoView da = new AlunoView();
+        new AlunoController(da, new AlunoDAO());
+        da.setVisible(true);
     }//GEN-LAST:event_jBalunoActionPerformed
     
     /**
