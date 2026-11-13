@@ -75,5 +75,26 @@ public class ModalidadeDAO extends ConexaoMySQL{
             }
         }
     }
+    
+    public List<Modalidade> buscarPorNome(String nome) throws SQLException {
+        List<Modalidade> lista = new ArrayList<>();
+        String sql = "SELECT id_mod, nome FROM modalidade WHERE nome LIKE ? ORDER BY nome";
+        conectar();
+        try (PreparedStatement stmt = con.prepareStatement(sql)) {
+            stmt.setString(1, "%" + nome + "%");
+            try (ResultSet rs = stmt.executeQuery()) {
+                while (rs.next()) {
+                    Modalidade m = new Modalidade();
+                    m.setIdMod(rs.getInt("id_mod"));
+                    m.setNome(rs.getString("nome"));
+                    lista.add(m);
+                }
+            }
+        } finally {
+            if (con != null) con.close();
+        }
+        return lista;
+    }
+    
 }
 

@@ -63,6 +63,10 @@ private void carregarCombos() {
             InstrutorDAO instDAO = new InstrutorDAO();
             cbInstrutor.removeAllItems();
             // Adiciona um item nulo ou vazio opcional se quiseres, ou lista normal
+            Instrutor semInstrutor = new Instrutor();
+            semInstrutor.setId(0);
+            semInstrutor.setNome("Sem instrutor");
+            cbInstrutor.addItem(semInstrutor);
             for (Instrutor i : instDAO.listar()) {
                 cbInstrutor.addItem(i);
             }
@@ -279,12 +283,12 @@ private void carregarCombos() {
                     .addComponent(jLabel4)
                     .addComponent(cbInstrutor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(23, 23, 23)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(btnSalvar)
                         .addComponent(btnExcluir)
-                        .addComponent(btnLimpar)))
+                        .addComponent(btnLimpar))
+                    .addComponent(jLabel5))
                 .addGap(69, 69, 69)
                 .addComponent(jLabel9)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -315,7 +319,7 @@ private void carregarCombos() {
             int idAluno = alunoSel.getId();
             int idPlano = planoSel.getId();
             int idMod = modSel.getIdMod();
-            Integer idTutor = (instSel != null) ? instSel.getId() : null;
+            Integer idTutor = (instSel != null && instSel.getId() > 0) ? instSel.getId() : null;
 
             String dataStr = txtDataInicio.getText();
             String status = (String) cbStatus.getSelectedItem();

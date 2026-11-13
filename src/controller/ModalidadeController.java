@@ -44,4 +44,15 @@ public class ModalidadeController {
     public void excluir(int idMod) throws SQLException {
         modalidadeDAO.excluir(idMod);
     }
+    
+    public List<Modalidade> buscar(String nome) {
+        try {
+            if (nome == null || nome.trim().isEmpty()) return modalidadeDAO.listar();
+            return modalidadeDAO.buscarPorNome(nome.trim());
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    
 }
