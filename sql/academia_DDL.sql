@@ -43,7 +43,8 @@ CREATE TABLE plano(
     valor DECIMAL(8,2) NOT NULL,
     duracao_meses INT NOT NULL,
     
-    CONSTRAINT pk_plano PRIMARY KEY(id_plano)
+    CONSTRAINT pk_plano PRIMARY KEY(id_plano),
+    CONSTRAINT uq_nome_plano UNIQUE(nome_plano)
 )ENGINE = InnoDB;
 
 CREATE TABLE matricula(

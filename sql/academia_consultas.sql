@@ -1,6 +1,6 @@
 -- ======================================================
 -- Projeto : Sistema de Gestão de Academia
--- Objetivo : Demonstração dos registros do banco (MySQL / InnoDB)
+-- Objetivo : Teste de consultas (MySQL / InnoDB)
 -- Arquivo : academia_consultas.sql
 -- Descrição: Script de consulta do banco da academia
 -- Disciplina: Programação Orientada a Objeto
