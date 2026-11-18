@@ -155,6 +155,7 @@ public class PlanoController {
 
     private void tratarErroSQL(SQLException ex) {
         switch (ex.getErrorCode()) {
+            case 1062 -> view.mostrarErro("Já existe um plano cadastrado com este nome.");
             case 1451 -> view.mostrarErro("Não é possível excluir: o plano está sendo usado em matrículas.\n"
                                         + "Altere ou remova essas matrículas antes.");
             default -> view.mostrarErro("Erro de banco de dados: " + ex.getMessage());
